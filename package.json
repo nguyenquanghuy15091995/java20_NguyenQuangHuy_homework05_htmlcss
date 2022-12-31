@@ -1,0 +1,30 @@
+{
+  "name": "java20_NguyenQuangHuy_homework05_htmlcss",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Huy Ed. Nguyen",
+  "license": "MIT",
+  "scripts": {
+    "start": "set NODE_PATH=./dist && node ./dist/app.js",
+    "dev": "nodemon ./src/app.ts",
+    "build": "tsc && tsc-alias && yarn copy-static-and-views",
+    "copy-static-and-views": "copyfiles -u 1 \"src/views/**/*\" \"src/assets/**/*\" \"./dist\""
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
+    "@types/shelljs": "^0.8.11",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.20",
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.2",
+    "tsconfig-paths": "^4.1.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
