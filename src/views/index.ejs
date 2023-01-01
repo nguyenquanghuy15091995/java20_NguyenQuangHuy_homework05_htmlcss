@@ -4,5 +4,140 @@
     <%- include("./partials/head") %>
     <title>Homepage</title>
   </head>
-  <body></body>
+  <body>
+    <!--  -->
+    <!-- Header -->
+    <!--  -->
+    <%- include("./partials/header") %>
+    <!--  -->
+    <!-- slider -->
+    <!--  -->
+    <div class="container pt-3 pt-md-0">
+      <%- include("./partials/carousel", { sliders: sliders }) %>
+    </div>
+    <!--  -->
+    <!-- overview -->
+    <!--  -->
+    <div class="container py-4">
+      <p id="overview-desc" data-desc="<%= overview.description %>"></p>
+      <div class="row gy-4">
+        <div class="col-12 col-lg-6">
+          <div class="row gy-4">
+            <div class="col-12 col-md-6">
+              <img
+                src="<%= overview.images[0].imgSrc %>"
+                class="w-100"
+                alt="<%= overview.images[0].name %>"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <img
+                src="<%= overview.images[1].imgSrc %>"
+                class="w-100"
+                alt="<%= overview.images[1].name %>"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                src="<%= overview.images[2].imgSrc %>"
+                class="w-100"
+                alt="<%= overview.images[2].name %>"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row gy-4">
+            <div class="col-12">
+              <img
+                src="<%= overview.images[3].imgSrc %>"
+                class="w-100"
+                alt="<%= overview.images[3].name %>"
+              />
+            </div>
+            <div class="col-12">
+              <img
+                src="<%= overview.images[4].imgSrc %>"
+                class="w-100"
+                alt="<%= overview.images[4].name %>"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Popular products -->
+    <!--  -->
+    <div class="container py-4">
+      <p class="fs-4 fw-semibold text-uppercase text-center">
+        Các sản phẩm bán chạy
+      </p>
+      <div class="row gy-4">
+        <% popularProducts.forEach((product) => { %>
+        <div class="col-12 col-md-6 col-xl-3">
+          <%- include("./partials/product-card", { product: product }) %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Sale area -->
+    <!--  -->
+    <div class="container py-4">
+      <div class="position-relative">
+        <a href="#" class="stretched-link">
+          <img
+            src="images/nature.jpg"
+            class="w-100 object-fit-cover object-position-top"
+            width="600"
+            height="250"
+            alt="sale"
+          />
+        </a>
+        <div
+          class="position-absolute"
+          style="top: 5%; left: 25%; width: 220px; height: 220px"
+        >
+          <div
+            class="w-100 h-100 rounded-circle d-flex flex-column align-items-center justify-content-center text-white"
+            style="background-color: rgba(132, 32, 41, 0.6)"
+          >
+            <div class="text-uppercase fs-4 lh-sm">sale of</div>
+            <div class="text-uppercase fs-1 lh-sm fw-semibold">50%</div>
+            <div class="px-4 text-center">Các sản phẩm Sofa trong tháng 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Services -->
+    <!--  -->
+    <div class="container py-4">
+      <div class="row gy-4 justify-content-center">
+        <% services.forEach((service) => { %>
+        <div class="col-12 col-md-4 col-xl-3">
+          <%- include("./partials/service-card", { service: service }) %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Footer -->
+    <!--  -->
+    <%- include("./partials/footer") %>
+    <!--  -->
+    <!-- Scripts -->
+    <!--  -->
+    <script>
+      if (window) {
+        window.addEventListener("load", (event) => {
+          const overviewDesc = document.getElementById("overview-desc");
+          if (overviewDesc) {
+            overviewDesc.innerHTML = overviewDesc.dataset.desc;
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

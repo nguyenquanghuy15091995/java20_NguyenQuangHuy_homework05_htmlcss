@@ -1,0 +1,23 @@
+<% const menuItems = [ {id: 1, name: "Trang chủ", href: "/"}, {id: 2, name:
+"Giới thiệu", href: "#"}, {id: 3, name: "Sản phẩm", href: "/products"}, {id: 4,
+name: "Tin tức", href: "#"}, {id: 5, name: "Liên hệ", href: "#"}, ]; %>
+<header>
+  <div class="header_logo-wrapper container pb-2">
+    <img src="images/logo.png" width="220" height="68" alt="logo" />
+  </div>
+  <div class="bg-dark">
+    <div class="container">
+      <div class="d-block d-md-flex">
+        <% menuItems.forEach((item) => { %>
+        <div class="position-relative py-2 px-3 text-uppercase">
+          <a
+            class="header_menu-item_link stretched-link fw-semibold text-white text-decoration-none"
+            href="<%= item.href %>"
+            ><%= item.name %></a
+          >
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</header>

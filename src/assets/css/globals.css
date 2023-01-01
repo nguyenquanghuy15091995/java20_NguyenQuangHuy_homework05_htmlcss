@@ -1,0 +1,52 @@
+@import url("bootstrap.min.css");
+
+* {
+  letter-spacing: -0.2px;
+}
+
+.header_menu-item_link {
+  opacity: 0.85;
+}
+
+.header_menu-item_link:hover {
+  opacity: 1;
+}
+
+.slider_item {
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .slider_item {
+    height: 275px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .slider_item {
+    height: 365px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slider_item {
+    height: 430px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .slider_item {
+    height: 500px;
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+
+.object-position-top {
+  object-position: top;
+  -o-object-position: top;
+}
